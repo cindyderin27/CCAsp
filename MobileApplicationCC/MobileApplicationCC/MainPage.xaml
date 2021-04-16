@@ -3,48 +3,36 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MobileApplicationCC.MainPage">
 
-    <ContentPage.Content>
-        <ScrollView>
-            <StackLayout VerticalOptions="FillAndExpand"
-                      Padding="30,10,30,10"
-                     HorizontalOptions="Fill"
-                     BackgroundColor="White">
-
-
-                <Frame BackgroundColor="LightGreen"  CornerRadius="30"
-                     Padding="30,0,30,10"
-                  HeightRequest="40">
-                    <Label Text="Bienvenue!" HorizontalTextAlignment="Center" TextColor="White" FontSize="30"/>
-                </Frame>
-
-                <Label Text="Créer un bien"
-                    FontAttributes="Bold"
-                     TextColor="lightgreen"
-                     FontSize="30"
-                    Padding="30,10,30,10"/>
-
-                <Label Text="Nom"
-                    FontAttributes="Bold"
-                     TextColor="Black"
-                    FontSize="16" Padding="8,24,30,0"/>
-                <Entry  x:Name="txtNom"
-                    Placeholder="Entrer le nom"/>
-
-                <Button x:Name="btnSave"
-                    FontFamily="mdi"
-                    FontSize="Medium"
-                    ImageSource=""
-                     FontAttributes="Bold"
-                    BackgroundColor="LightGreen"
-                    ContentLayout="Right"
-                    Text="Enregistrer"
-                    HeightRequest="60"
-                    TextColor="White"
-                    WidthRequest="0"
-                     Margin="10,10,25,0"
-                    CornerRadius="30"/>
-
-            </StackLayout>
-        </ScrollView>
-    </ContentPage.Content>
+    <CollectionView x:Name="collection">
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <StackLayout Orientation="Horizontal"
+                             Padding="10">
+                    <Frame CornerRadius="50"
+                           BackgroundColor="LightGray"
+                           WidthRequest="30"
+                           HeightRequest="10">
+                        <Label Text="{Binding ProduitLettre}"
+                               FontAttributes="Bold"
+                               TextColor="White"
+                               HorizontalTextAlignment="Center"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"/>
+                    </Frame>
+                    <StackLayout Spacing="0">
+                        <Label Text="{Binding Reference, StringFormat='#{0}'}"
+                               FontSize="Micro"/>
+                        <Label Text="{Binding Designation}"
+                               FontSize="Subtitle"
+                               FontAttributes="Bold"/>
+                        <Label Text="{Binding PrixUnitaireAvecDevise}"
+                               TextColor="DarkRed"/>
+                        <Label Text="{Binding Categorie.Nom}"
+                               FontSize="Micro"
+                               FontAttributes="Italic"/>
+                    </StackLayout>
+                </StackLayout>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
 </ContentPage>
