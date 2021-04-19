@@ -1,0 +1,60 @@
+﻿
+@model AspApplicationCC.Models.Bien
+@{
+    ViewBag.Title = "Créer un bien";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Edit", "Bien", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+
+    <div class="mb-3">
+        @Html.LabelFor(x => x.Nom, new { @class = "form-label" })
+        @Html.TextBoxFor(x => x.Nom, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Nom, null, new { @class = "text-danger small" })
+    </div>
+
+    <div class="mb-3">
+        @Html.LabelFor(x => x.DateCreation, new { @class = "form-label" })
+        <input type="date" name="DateCreation" value="DateCreation"/>
+             @Html.ValidationMessageFor(x => x.DateCreation, null, new { @class = "text-danger small" })
+    </div>
+
+
+//@*< div class="mb-3">
+//@Html.LabelFor(x => x.Prix, new { @class = "form-label" })
+//@Html.TextBoxFor(x => x.Prix, new { @class = "form-control" })
+//@Html.ValidationMessageFor(x => x.Prix, null, new { @class = "text-danger small" })
+//</ div >
+//< div class= "mb-3" >
+// @Html.LabelFor(x => x.Description, new { @class = "form-label" })
+//@Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+//@Html.ValidationMessageFor(x => x.Description, null, new { @class = "text-danger small" })
+//</ div > *@
+<div class="col-log-6">
+
+
+    <div class="mb-3">
+            @Html.LabelFor(x => x.Image, new { @class = "form-label" })
+            <input type="file" accept="image/*" id="Image" name="@Html.IdFor(x=>x.Image)" class="form-control" />
+            @Html.ValidationMessageFor(x => x.Image, null, new { @class = "text-danger small" })
+        </div>
+
+
+    <div class="mb-3">
+        @Html.LabelFor(x => x.Proprietaire, new { @class = "form-label" })
+        @Html.DropDownListFor(x => x.IdProprietaire, Model.Proprietaires, new { @class = "form-select" })
+        @Html.ValidationMessageFor(x => x.IdProprietaire, null, new { @class = "text-danger small" })
+    </div>
+
+
+    <button type="submit" class="btn btn-success" style="width:100%">
+        <i class="icon-save">
+            Save
+        </i>
+    </button>
+</div>
+
+}

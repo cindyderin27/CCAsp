@@ -18,7 +18,12 @@ namespace ApiApplicationCC.Models
         public System.DateTime DateCreation { get; set; }
         public string Nom { get; set; }
         public int IdProprietaire { get; set; }
+        public string Catégorie { get; set; }
+        public string Picture { get; set; }
+        public Nullable<double> Prix { get; set; }
+        public string Description { get; set; }
     
         public virtual Proprietaire Proprietaire { get; set; }
+        public string Image { get; internal set; }
     }
 }

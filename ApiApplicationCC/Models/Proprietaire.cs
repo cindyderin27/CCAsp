@@ -26,5 +26,6 @@ namespace ApiApplicationCC.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Bien> Biens { get; set; }
+        public object Picture { get; internal set; }
     }
 }

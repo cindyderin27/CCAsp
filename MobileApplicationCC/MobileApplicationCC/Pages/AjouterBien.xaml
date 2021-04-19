@@ -9,7 +9,6 @@
                      HorizontalOptions="Fill"
                      BackgroundColor="White">
 
-
                 <Frame BackgroundColor="LightGreen"  CornerRadius="30"
                      Padding="30,0,30,10"
                   HeightRequest="40">
@@ -28,11 +27,16 @@
                     FontSize="16" Padding="8,24,30,0"/>
                 <Entry  x:Name="txtNom"
                     Placeholder="Entrer le nom"/>
+                <DatePicker x:Name="DateCreation"
+                        
+                          TextColor="Black"
+                        MinimumDate="01/01/1900"
+                      />
 
                 <Button x:Name="btnSave"
                     FontFamily="mdi"
                     FontSize="Medium"
-                    ImageSource=""
+                   Clicked="btnSave_Clicked"
                      FontAttributes="Bold"
                     BackgroundColor="LightGreen"
                     ContentLayout="Right"

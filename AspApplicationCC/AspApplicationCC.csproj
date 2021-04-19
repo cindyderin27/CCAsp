@@ -100,6 +100,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BienController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProprietaireController.cs" />
     <Compile Include="Global.asax.cs">
@@ -116,7 +117,12 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Bien\AfficherProprietaire.cshtml" />
+    <Content Include="Views\Bien\Edit.cshtml" />
+    <Content Include="Views\Bien\Create.cshtml" />
+    <Content Include="Views\Proprietaire\Edit.cshtml" />
     <Content Include="Views\Proprietaire\AfficherProprietaire.cshtml" />
+    <Content Include="Views\Proprietaire\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

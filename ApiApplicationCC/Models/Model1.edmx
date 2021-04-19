@@ -13,6 +13,10 @@
           <Property Name="DateCreation" Type="date" Nullable="false" />
           <Property Name="Nom" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="IdProprietaire" Type="int" Nullable="false" />
+          <Property Name="Catégorie" Type="varchar" MaxLength="50" />
+          <Property Name="Picture" Type="varchar(max)" />
+          <Property Name="Prix" Type="float" />
+          <Property Name="Description" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="Proprietaire">
           <Key>
@@ -62,6 +66,10 @@
           <Property Name="DateCreation" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Nom" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="IdProprietaire" Type="Int32" Nullable="false" />
+          <Property Name="Catégorie" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Picture" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Prix" Type="Double" />
+          <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Proprietaire" Relationship="ProprieteModel.FK_Bien_Proprietaire" FromRole="Bien" ToRole="Proprietaire" />
         </EntityType>
         <EntityType Name="Proprietaire">
@@ -94,6 +102,10 @@
           <EntitySetMapping Name="Biens">
             <EntityTypeMapping TypeName="ProprieteModel.Bien">
               <MappingFragment StoreEntitySet="Bien">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Prix" ColumnName="Prix" />
+                <ScalarProperty Name="Picture" ColumnName="Picture" />
+                <ScalarProperty Name="Catégorie" ColumnName="Catégorie" />
                 <ScalarProperty Name="IdProprietaire" ColumnName="IdProprietaire" />
                 <ScalarProperty Name="Nom" ColumnName="Nom" />
                 <ScalarProperty Name="DateCreation" ColumnName="DateCreation" />

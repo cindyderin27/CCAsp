@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace AspApplicationCC.Models
 {
@@ -16,6 +17,6 @@ namespace AspApplicationCC.Models
         public DateTime DateCreation { get; set; }
         public string Nom { get; set; }
 
-        public  ICollection<Bien> Biens { get; set; }
+        public IEnumerable<SelectListItem> Biens { get; set; }
     }
 }

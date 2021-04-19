@@ -1,7 +1,7 @@
-﻿@model IEnumerable<AspApplicationCC.Models.Proprietaire>
+﻿@model IEnumerable<AspApplicationCC.Models.Bien>
 
 @{
-    ViewBag.Title = "Liste des propriétaires";
+    ViewBag.Title = "Liste des biens et leurs propriétaires";
 }
 
 <h2>@ViewBag.Title</h2>
@@ -11,11 +11,25 @@
         <Table border="1" id="cart" class="table table-hover table-condensed">
             <thead>
                 <tr>
-
+                    <th>
+                       Photo
+                    </th>
+                    <th>
+                        Reference
+                    </th>
                     <th>
                         Nom
                     </th>
-               
+                    <th>
+                        Date de création
+                    </th>
+                    @*<th>
+                        Propriétaire
+                    </th>*@
+                    @*<th>
+            Désignation
+        </th>*@
+
                     <th>
                         <a href="@Url.Action("Create")">
 
@@ -29,16 +43,27 @@
 
             <tbody>
                 @if (Model != null && Model.Count() > 0)
-                {
+                    {
                     foreach (var p in Model)
                     {
                         <tr>
+                            <td data-th="Image">
+                            <img src="@p.Picture" style="height:50px" class="img-fluid"/>
+                            </td>
+                            <td data-th="Reference">
+                                @p.Id
+                            </td>
+
                             <td data-th="Nom">
                                 @p.Nom
                             </td>
-                            
+                            <td data-th="Date creation">
+                                @p.DateCreation
+                            </td>
 
-
+                            @*<td data-th="Proprietaire">
+                                @p.Proprietaire.Nom
+                            </td>*@
                             <td>
                                 <a href="@Url.Action("Edit", new { id = p.Id })" class="text-primary">
                                     Edit
@@ -51,7 +76,6 @@
                         </tr>
 
                     }
-
                 }
 
             </tbody>
